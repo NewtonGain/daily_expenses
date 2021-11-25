@@ -1,15 +1,13 @@
 import 'package:daily_expenses/widgets/user_transaction.dart';
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(MyApp());
-}
+void main()=>runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
           appBar: AppBar(
             title: Text(
@@ -17,6 +15,9 @@ class MyApp extends StatelessWidget {
             ),
             centerTitle: true,
             backgroundColor: Colors.blue,
+            actions: [IconButton(onPressed: (){},
+            icon: Icon(
+              Icons.add),),],
           ),
           backgroundColor: Colors.indigo,
           body: SingleChildScrollView(
@@ -42,8 +43,12 @@ class MyApp extends StatelessWidget {
                 ),
                 UserTrasaction(),
               ],
+              
             ),
-          )),
+          ),
+          floatingActionButtonLocation: FloatingActionButtonLocation.miniCenterFloat,
+          floatingActionButton: FloatingActionButton(onPressed: (){},child: Icon(Icons.add),),
+          ),
     );
   }
 }
